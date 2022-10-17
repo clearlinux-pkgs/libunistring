@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF5BE8B267C6A406D (bruno@clisp.org)
 #
 Name     : libunistring
-Version  : 1.0
-Release  : 20
-URL      : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.0.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.0.tar.xz
-Source1  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.0.tar.xz.sig
+Version  : 1.1
+Release  : 21
+URL      : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz
+Source1  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-3.0
@@ -93,10 +93,10 @@ license components for the libunistring package.
 
 
 %prep
-%setup -q -n libunistring-1.0
-cd %{_builddir}/libunistring-1.0
+%setup -q -n libunistring-1.1
+cd %{_builddir}/libunistring-1.1
 pushd ..
-cp -a libunistring-1.0 build32
+cp -a libunistring-1.1 build32
 popd
 
 %build
@@ -104,7 +104,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1645127605
+export SOURCE_DATE_EPOCH=1666025159
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -135,11 +135,11 @@ cd ../build32;
 make check || :
 
 %install
-export SOURCE_DATE_EPOCH=1645127605
+export SOURCE_DATE_EPOCH=1666025159
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libunistring
-cp %{_builddir}/libunistring-1.0/COPYING %{buildroot}/usr/share/package-licenses/libunistring/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libunistring-1.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/libunistring/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
+cp %{_builddir}/libunistring-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libunistring/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/libunistring-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/libunistring/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9 || :
 pushd ../build32/
 %make_install32
 if [ -d  %{buildroot}/usr/lib32/pkgconfig ]
@@ -198,13 +198,13 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libunistring.so.2
-/usr/lib64/libunistring.so.2.2.0
+/usr/lib64/libunistring.so.5
+/usr/lib64/libunistring.so.5.0.0
 
 %files lib32
 %defattr(-,root,root,-)
-/usr/lib32/libunistring.so.2
-/usr/lib32/libunistring.so.2.2.0
+/usr/lib32/libunistring.so.5
+/usr/lib32/libunistring.so.5.0.0
 
 %files license
 %defattr(0644,root,root,0755)
