@@ -6,7 +6,7 @@
 #
 Name     : libunistring
 Version  : 1.1
-Release  : 23
+Release  : 24
 URL      : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz
 Source0  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz
 Source1  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz.sig
