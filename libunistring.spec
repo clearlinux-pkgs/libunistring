@@ -6,7 +6,7 @@
 #
 Name     : libunistring
 Version  : 1.1
-Release  : 24
+Release  : 25
 URL      : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz
 Source0  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz
 Source1  : https://mirrors.kernel.org/gnu/libunistring/libunistring-1.1.tar.xz.sig
@@ -104,7 +104,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1666025159
+export SOURCE_DATE_EPOCH=1667871279
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -113,8 +113,8 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
-%configure --disable-static
-make
+%configure --disable-static --enable-silent-rules
+make  %{?_smp_mflags}
 
 pushd ../build32/
 export PKG_CONFIG_PATH="/usr/lib32/pkgconfig:/usr/share/pkgconfig"
@@ -122,24 +122,24 @@ export ASFLAGS="${ASFLAGS}${ASFLAGS:+ }--32"
 export CFLAGS="${CFLAGS}${CFLAGS:+ }-m32 -mstackrealign"
 export CXXFLAGS="${CXXFLAGS}${CXXFLAGS:+ }-m32 -mstackrealign"
 export LDFLAGS="${LDFLAGS}${LDFLAGS:+ }-m32 -mstackrealign"
-%configure --disable-static    --libdir=/usr/lib32 --build=i686-generic-linux-gnu --host=i686-generic-linux-gnu --target=i686-clr-linux-gnu
-make
+%configure --disable-static --enable-silent-rules   --libdir=/usr/lib32 --build=i686-generic-linux-gnu --host=i686-generic-linux-gnu --target=i686-clr-linux-gnu
+make  %{?_smp_mflags}
 popd
 %check
 export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make check
+make %{?_smp_mflags} check
 cd ../build32;
-make check || :
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1666025159
+export SOURCE_DATE_EPOCH=1667871279
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libunistring
-cp %{_builddir}/libunistring-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libunistring/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
-cp %{_builddir}/libunistring-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/libunistring/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9 || :
+cp %{_builddir}/libunistring-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libunistring/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libunistring-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/libunistring/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
 pushd ../build32/
 %make_install32
 if [ -d  %{buildroot}/usr/lib32/pkgconfig ]
