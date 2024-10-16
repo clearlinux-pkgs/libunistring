@@ -509,6 +509,7 @@ libunistring.so.5:uc_is_property_line_separator
 libunistring.so.5:uc_is_property_logical_order_exception
 libunistring.so.5:uc_is_property_lowercase
 libunistring.so.5:uc_is_property_math
+libunistring.so.5:uc_is_property_modifier_combining_mark
 libunistring.so.5:uc_is_property_non_break
 libunistring.so.5:uc_is_property_not_a_character
 libunistring.so.5:uc_is_property_numeric

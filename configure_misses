@@ -24,12 +24,11 @@ Configure miss: crtdefs.h
 Configure miss: fake locale system (OpenBSD)
 Configure miss: fake locale system (OpenBSD)
 Configure miss: fake locale system (OpenBSD)
-Configure miss: gcc option to enable large file support
-Configure miss: gcc option to enable large file support
+Configure miss: gcc option to support large files
+Configure miss: gcc option to support large files
 Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
-Configure miss: i686-generic-linux-gnu-file
 Configure miss: i686-generic-linux-gnu-windres
 Configure miss: ioctl with POSIX signature
 Configure miss: ioctl with POSIX signature
@@ -40,9 +39,9 @@ Configure miss: library needed for semaphore functions
 Configure miss: random.h
 Configure miss: random.h
 Configure miss: random.h
-Configure miss: stdckdint.h
-Configure miss: stdckdint.h
-Configure miss: stdckdint.h
+Configure miss: reasonable pthread_rwlock wait queue handling
+Configure miss: reasonable pthread_rwlock wait queue handling
+Configure miss: reasonable pthread_rwlock wait queue handling
 Configure miss: strerror_r with POSIX signature
 Configure miss: strerror_r with POSIX signature
 Configure miss: strerror_r with POSIX signature
@@ -51,15 +50,24 @@ Configure miss: unreachable
 Configure miss: unreachable
 Configure miss: whether INT64_MAX == LONG_MAX
 Configure miss: whether UINT64_MAX == ULONG_MAX
+Configure miss: whether _putenv is declared
+Configure miss: whether _putenv is declared
+Configure miss: whether _putenv is declared
 Configure miss: whether btowc is consistent with mbrtowc in the C locale
 Configure miss: whether btowc is consistent with mbrtowc in the C locale
 Configure miss: whether btowc is consistent with mbrtowc in the C locale
 Configure miss: whether ctype.h defines __header_inline
 Configure miss: whether ctype.h defines __header_inline
 Configure miss: whether ctype.h defines __header_inline
+Configure miss: whether float.h conforms to ISO C23
+Configure miss: whether float.h conforms to ISO C23
+Configure miss: whether float.h conforms to ISO C23
 Configure miss: whether mbrtowc stores incomplete characters
 Configure miss: whether mbrtowc stores incomplete characters
 Configure miss: whether mbrtowc stores incomplete characters
+Configure miss: whether nullptr_t needs <stddef.h>
+Configure miss: whether nullptr_t needs <stddef.h>
+Configure miss: whether nullptr_t needs <stddef.h>
 Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
 Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
 Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
@@ -72,6 +80,9 @@ Configure miss: whether the compiler is clang
 Configure miss: whether the compiler produces multi-arch binaries
 Configure miss: whether the compiler produces multi-arch binaries
 Configure miss: whether the compiler produces multi-arch binaries
+Configure miss: whether this system supports file names of any length
+Configure miss: whether this system supports file names of any length
+Configure miss: whether this system supports file names of any length
 Configure miss: whether to activate relocatable installation
 Configure miss: whether to activate relocatable installation
 Configure miss: whether to activate relocatable installation
@@ -80,5 +91,3 @@ Configure miss: windres
 Configure miss: windres
 Configure miss: working nanosleep
 Configure miss: working nanosleep
-Configure miss: x86_64-generic-linux-gnu-file
-Configure miss: x86_64-generic-linux-gnu-file
